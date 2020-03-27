@@ -2,9 +2,9 @@
 <html>
 <body>
 
-<button onclick="roll();">Roll</button>
+<button style="font-size: 100px;" onclick="roll();">Roll</button>
 
-<div style="font-size: 100px;" id="txt"></div>
+<div style="font-size: 150px;" id="txt"></div>
 
 <script>
 
@@ -16,7 +16,7 @@ function roll() {
   setTimeout(()=> {
     let o = vals[Math.floor(Math.random()*vals.length)];
     txt.innerHTML = o;
-  },500);
+  },400);
 }
 
 </script>
