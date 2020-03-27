@@ -5,15 +5,23 @@
 <font size="+100"> <p id="demo"></p> <font>
 
 <script>
-function reload() {
 
-	const vals = [12,1,2,3,1,2,3,4,2,3,4,5,3,4,5,6];
-	let o = vals[Math.floor(Math.random()*vals.length)];
-	document.getElementById("demo").innerHTML = o;
+const vals = [12,1,2,3,1,2,3,4,2,3,4,5,3,4,5,6];
+const txt = document.getElementById("demo");
+
+function roll() {
+  txt.innerHTML = "";
+  setTimeout(()=> {
+    let o = vals[Math.floor(Math.random()*vals.length)];
+    txt.innerHTML = o;
+  },500);
 }
+
 </script>
 
-<button onclick="reload()">Reload</button>
+<button onclick="roll();">Roll</button>
 
 </body>
+</html>
+
 </html>
