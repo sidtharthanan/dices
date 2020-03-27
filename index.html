@@ -1,22 +1,50 @@
 <!DOCTYPE html>
 <html>
+<style>
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+* {
+  font-size: 100px;
+}
+.outcome {
+  font-size: 150px;
+}
+</style>
+
 <body>
-
-<button style="font-size: 100px;" onclick="roll();">Roll</button>
-
-<div style="font-size: 150px;" id="txt"></div>
+<div id="container">
+    <div>
+        <button onclick="clearAndRoll();">Roll</button>
+    </div>
+    <div id="outcomes"></div>	
+</div>
 
 <script>
 
 const vals = [12,1,2,3,1,2,3,4,2,3,4,5,3,4,5,6];
-const txt = document.getElementById("txt");
+const outcomes = document.getElementById("outcomes");
 
+function clearAndRoll() {
+  outcomes.innerHTML = "";
+  setTimeout(roll,500);
+}
 function roll() {
-  txt.innerHTML = "";
-  setTimeout(()=> {
-    let o = vals[Math.floor(Math.random()*vals.length)];
-    txt.innerHTML = o;
-  },400);
+  const outcome = vals[Math.floor(Math.random()*vals.length)];
+  const outcomeE = document.createElement("div");
+  outcomeE.className = "outcome";
+  outcomeE.innerHTML = outcome;
+  outcomes.appendChild(outcomeE);
+  if([1,5,6,12].includes(outcome)) {
+    roll();
+  }
 }
 
 </script>
