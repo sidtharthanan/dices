@@ -18,11 +18,19 @@ body {
 .outcome {
   font-size: 150px;
 }
+.rollbtn { 
+  height: 150px;
+  width: 100%;
+  display: flex;
+}
+.rollbtn>* {
+  flex: 1;
+}
 </style>
 
 <body>
 <div id="container">
-    <div>
+    <div class="rollbtn">
         <button onclick="clearAndRoll();">Roll</button>
     </div>
     <div id="outcomes"></div>	
